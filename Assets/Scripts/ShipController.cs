@@ -11,6 +11,8 @@ public class ShipController : MonoBehaviour
 
     public GameObject projectilePrefab;
 
+    public const int LOOP_BOUND = 70; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class ShipController : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
-        Debug.Log("Speed: " + speed2 + " " + horizontal);
+        // Debug.Log("Speed: " + speed2 + " " + horizontal);
         speed2 = Mathf.Clamp(speed2 + horizontal,-maxSpeed,maxSpeed);
         if(Mathf.Abs(horizontal) < 0.1f){
             // Decel
@@ -30,9 +32,9 @@ public class ShipController : MonoBehaviour
         transform.Translate(Vector3.right * Time.deltaTime * speed2);
         
         // apply walls cycle        
-        if(transform.position.x < -70){
+        if(transform.position.x < -LOOP_BOUND){
             transform.position = new Vector3(70, transform.position.y, transform.position.z);
-        }else if(transform.position.x > 70){
+        }else if(transform.position.x > LOOP_BOUND){
              transform.position = new Vector3(-70, transform.position.y, transform.position.z);
         }
         // Shooter
