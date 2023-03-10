@@ -24,4 +24,18 @@ public class ProjectileDriver : MonoBehaviour
         }
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
+
+    private void OnCollisionEnter(Collision coll){
+        Debug.Log("point");
+        Destroy(gameObject);
+        if(coll.gameObject.GetComponent<MeteorDriver>()){
+            MeteorDriver meteorDriv = coll.gameObject.GetComponent<MeteorDriver>();
+            meteorDriv.hits ++;
+            meteorDriv.isDying = true; // should make setter but nah
+        }else{
+            Debug.Log("hit object without a meteordriver");
+            Destroy(coll.gameObject);
+        }
+        
+    }
 }

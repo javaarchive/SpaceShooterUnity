@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a26bc74b653c14a388641c60d6f6f943, type: 2}
+  - {fileID: 2100000, guid: b0d5029ab5d9c4331bda70d82a7dd36b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,6 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3570217147396109861}
   - component: {fileID: -8758410196028666185}
+  - component: {fileID: -1191715921298373712}
+  - component: {fileID: 7068114495713959040}
   m_Layer: 0
   m_Name: SmallMeteor
   m_TagString: Untagged
@@ -129,6 +131,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c94f25d0b0c9254f87455383c3d9363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDying: 0
+  hits: 0
+  dyingScaleDown: 0.5
+  dyingRemoveThreshold: 0.1
+--- !u!54 &-1191715921298373712
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233424576257584287}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &7068114495713959040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4233424576257584287}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8635468, y: 0.72585994, z: 0.88755417}
+  m_Center: {x: -0.0018131257, y: 0.32779232, z: 0.010180282}
 --- !u!1 &4319204375062471788
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +225,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3335e8df08173437385b824a18f3797d, type: 2}
+  - {fileID: 2100000, guid: 6545c3b14a9014a3191f0d808e248988, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

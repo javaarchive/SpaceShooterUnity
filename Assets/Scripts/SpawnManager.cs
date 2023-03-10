@@ -10,7 +10,7 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnMeteors", 0.5f, 1.5f);
+        InvokeRepeating("SpawnMeteors", 0.5f, 0.5f);
     }
 
     // Update is called once per frame
@@ -26,4 +26,6 @@ public class SpawnManager : MonoBehaviour
         GameObject meteor = meteorPrefabs[Random.Range(0, meteorPrefabs.Length)];
         Instantiate(meteor, new Vector3(randomX, 0.5f, 45f), meteor.transform.rotation);
     }
+
+    
 }
