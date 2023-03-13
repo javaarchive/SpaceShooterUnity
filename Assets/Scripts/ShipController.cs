@@ -16,7 +16,7 @@ public class ShipController : MonoBehaviour
 
     public const int LOOP_BOUND = 70; 
 
-    public Vector3 shrinkMultiply = new Vector3(0.9f,0.9f,0.9f);
+    public Vector3 shrinkMultiply = new Vector3(0.95f,0.95f,0.95f);
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +24,19 @@ public class ShipController : MonoBehaviour
         
     }
 
+    private int score;
+
+    public int getScore(){
+        return score;
+    }
+
+    public void setScore(int newScore){
+        this.score = newScore;
+    }
+
     private void Dying(){
         // apply death animation
-        Debug.Log("animate death " + transform.localScale.x);
+        // Debug.Log("animate death " + transform.localScale.x);
         if(transform.localScale.x < 0.2){
             // destroy self
             Destroy(gameObject);
@@ -59,7 +69,8 @@ public class ShipController : MonoBehaviour
         }
         // Shooter
         if(Input.GetKeyDown(KeyCode.Space)){
-            Instantiate(projectilePrefab, transform.position, transform.rotation);
+            GameObject projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
+            projectile.GetComponent<ProjectileDriver>().originShip = this.gameObject;
         }
         
     }
@@ -69,7 +80,7 @@ public class ShipController : MonoBehaviour
         // totally not a cheat code
         if(!Input.GetKey(KeyCode.RightShift)){
             // if we are not dying start shrinker
-            if(!isDying) InvokeRepeating("Dying", 0.5f, 0.1f);
+            if(!isDying) InvokeRepeating("Dying", 0.5f, 0.01f);
             isDying = true;
         }
         // legacy code to instant die

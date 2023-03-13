@@ -35,7 +35,7 @@ public class MeteorDriver : MonoBehaviour
             if(transform.localScale.x <= dyingRemoveThreshold){
                 // nuke when we pass threshold
                 Destroy(this, 1.0f);
-            }else if(Time.frameCount % 3 == 0){ // this is such a troll piece of code every 3 frames we scale down
+            }else if(Time.frameCount % 3 == 0){ // this is such a troll piece of code every 3 frames we scale down to make the meteor smaller
                 float multiplier = Mathf.Pow(dyingScaleDown, hits);
                 transform.localScale = Vector3.Scale(transform.localScale, new Vector3(multiplier,multiplier,multiplier));
             }
