@@ -16,7 +16,7 @@ public class ShipController : MonoBehaviour
 
     public const int LOOP_BOUND = 70; 
 
-    public Vector3 shrinkMultiply = new Vector3(0.9999999f,0.9999999f,0.9999999f);
+    public Vector3 shrinkMultiply = new Vector3(0.9f,0.9f,0.9f);
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class ShipController : MonoBehaviour
 
     private void Dying(){
         // apply death animation
+        Debug.Log("animate death " + transform.localScale.x);
         if(transform.localScale.x < 0.2){
             // destroy self
             Destroy(gameObject);
