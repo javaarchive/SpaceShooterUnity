@@ -250,6 +250,7 @@ MonoBehaviour:
   - {fileID: 460199931075054950, guid: ed2e8e50cc7ed4f3f868100916ffeb37, type: 3}
   - {fileID: 8636613380902491892, guid: c886d893f77074cf58ad3c6e8d2311b7, type: 3}
   - {fileID: 4233424576257584287, guid: a5fe9126f34264ff29ac669b3459cffa, type: 3}
+  secondsPerMeteorWave: 30
 --- !u!4 &736484947
 Transform:
   m_ObjectHideFlags: 0
@@ -367,6 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1936520412708092159, guid: a3c6c7562b0b322449743a675f733e78, type: 3}
+  shrinkMultiply: {x: 0.95, y: 0.95, z: 0.95}
 --- !u!64 &1008658037
 MeshCollider:
   m_ObjectHideFlags: 0
