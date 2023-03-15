@@ -408,7 +408,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1936520412708092159, guid: a3c6c7562b0b322449743a675f733e78, type: 3}
       propertyPath: m_Name
-      value: ProjectileNew
+      value: ProjectileNewOffscreen
       objectReference: {fileID: 0}
     - target: {fileID: 3565660197463970881, guid: a3c6c7562b0b322449743a675f733e78, type: 3}
       propertyPath: m_RootOrder
